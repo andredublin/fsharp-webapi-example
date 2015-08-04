@@ -18,8 +18,7 @@ type Global() =
         config.MapHttpAttributeRoutes()
 
         // Configure serialization
-        config.Formatters.XmlFormatter.UseXmlSerializer <- true
-        config.Formatters.JsonFormatter.SerializerSettings.ContractResolver <- Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver()
+        config.Formatters.Remove(config.Formatters.XmlFormatter) |> ignore
 
         // Additional Web API settings
 

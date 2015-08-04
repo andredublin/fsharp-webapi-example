@@ -1,11 +1,11 @@
-namespace FSharp.WebAPI.Controllers
+namespace FSharpWebAPIExample.Controllers
 
 open System
 open System.Collections.Generic
 open System.Linq
 open System.Net.Http
 open System.Web.Http
-open FSharp.WebAPI.Models
+open FSharpWebAPIExample.Models
 
 /// Retrieves values.
 [<RoutePrefix("v1/cars")>]
