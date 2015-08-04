@@ -16,11 +16,6 @@ type Global() =
     static member RegisterWebApi(config: HttpConfiguration) =
         // Configure routing
         config.MapHttpAttributeRoutes()
-        config.Routes.MapHttpRoute(
-            "DefaultApi", // Route name
-            "api/{controller}/{id}", // URL with parameters
-            { controller = "{controller}"; id = RouteParameter.Optional } // Parameter defaults
-        ) |> ignore
 
         // Configure serialization
         config.Formatters.XmlFormatter.UseXmlSerializer <- true
