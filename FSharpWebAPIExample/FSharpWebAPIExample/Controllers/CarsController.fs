@@ -5,17 +5,16 @@ open System.Collections.Generic
 open System.Linq
 open System.Net.Http
 open System.Web.Http
-open DataAccess
+open FSharpWebAPIExample.CarsRepository
 
-/// Retrieves values.
 [<RoutePrefix("v1/cars")>]
-type CarsController() =
+type CarsController() = 
     inherit ApiController()
-
+    
     [<HttpGet>]
     [<Route("{id:int}")>]
-    member controller.Car(id : int) = CarsContext.getById id
-
+    member controller.Car(id : int) = Cars.getById id
+    
     [<HttpGet>]
-    [<Route("{make:string}")>]
-    member controller.Car(make : string) = CarsContext.getByMake make
+    [<Route("{make:alpha}")>]
+    member controller.Car(make : string) = Cars.getByMake make

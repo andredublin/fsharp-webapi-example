@@ -122,6 +122,8 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <ItemGroup>
+    <Compile Include="DomainTypes.fs" />
+    <Compile Include="CarsRepository.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Controllers\CarsController.fs" />
     <Content Include="Web.config" />
@@ -132,6 +134,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Data.SqlClient">
+      <HintPath>..\packages\FSharp.Data.SqlClient.1.7.5\lib\net40\FSharp.Data.SqlClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -162,12 +168,5 @@
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Xml.Linq.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.fsproj">
-      <Name>DataAccess</Name>
-      <Project>{caab75a6-f2ac-4128-9f95-aa5b3a4dd95a}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
 </Project>
