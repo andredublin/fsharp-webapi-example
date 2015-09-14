@@ -7,10 +7,9 @@
 
 ## Available endpoints
 
-* http://localhost:48213/v1/cars/
-* http://localhost:48213/v1/cars/{id}
+* http://localhost:48213/v1/cars/{id:int}
+* http://localhost:48213/v1/cars/{make:string}
 
 ## TODO
 
 * Implement test examples
-* Data access library using Entity Framework or FSharp.Data
